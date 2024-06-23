@@ -12,7 +12,8 @@ Part8  Part7  Part6       Part5  Part4   Part3             Part2   Part1
 [0]    [00]   [00000000]  [000]  [000]   [0000 0000 0000]  [0]     [00]
 
 
-
+c
+Copy code
 #include <stdint.h>
 #include <stdio.h>
 
