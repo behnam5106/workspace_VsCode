@@ -1,16 +1,32 @@
-32-bit Packet Decoder -- Embedded Programming
+# 32-bit Packet Decoder -- Embedded Programming
 
-Overview:
-This repository contains a simple C program that decodes a 32-bit packet of data into its constituent parts. 
-The packet is divided into eight parts with varying bit sizes. The program takes a 32-bit hexadecimal input from the user, decodes it, 
-and displays the individual parts.
+## Overview
 
-Packet Structure:
+This repository contains a simple C program that decodes a 32-bit packet of data into its constituent parts. The packet is divided into eight parts with varying bit sizes. The program takes a 32-bit hexadecimal input from the user, decodes it, and displays the individual parts.
+
+## Packet Structure
+
 The 32-bit packet is defined as follows:
 
-Part8  Part7  Part6       Part5  Part4   Part3             Part2   Part1
-[0]    [00]   [00000000]  [000]  [000]   [0000 0000 0000]  [0]     [00]
+| Part | Bits           | Description |
+|------|----------------|-------------|
+| 8    | [31]           | 1 bit       |
+| 7    | [30-29]        | 2 bits      |
+| 6    | [28-21]        | 8 bits      |
+| 5    | [20-18]        | 3 bits      |
+| 4    | [17-15]        | 3 bits      |
+| 3    | [14-3]         | 12 bits     |
+| 2    | [2]            | 1 bit       |
+| 1    | [1-0]          | 2 bits      |
 
+## Code Structure
+
+The program is structured as follows:
+
+1. **Define the packet structure**: The structure `packet` is defined using bit fields to represent the parts of the packet.
+2. **Main function**: The main function handles the input, decoding, and output.
+
+### Packet Structure Definition
 
 ```c
 #include <stdint.h>
@@ -27,9 +43,11 @@ struct packet {
     uint32_t part7 : 2;
     uint32_t part8 : 1;
 };
-Main Function
-c
-Copy code
+```
+
+### Main Function
+
+```c
 int main() {
     printf("32-bit Packet Decoder -- Embedded Programming \n");
 
@@ -65,10 +83,28 @@ int main() {
 
     return 0;
 }
+```
 
+## Compilation and Execution
 
-Comments and Notes:
-The packet structure uses bit fields to define each part of the packet. This approach ensures that the structure size is minimized.
-The program uses bitwise operations to extract each part from the 32-bit input.
-The size of the structure is displayed to show the memory footprint of the packet structure.
+To compile and run the program, follow these steps:
+
+1. **Compile the program**:
+   ```sh
+   gcc -o packet_decoder packet_decoder.c
+   ```
+
+2. **Run the executable**:
+   ```sh
+   ./packet_decoder
+   ```
+
+3. **Input the 32-bit packet data**: When prompted, enter the 32-bit packet data in hexadecimal format.
+
+## Comments and Notes
+
+- The packet structure uses bit fields to define each part of the packet. This approach ensures that the structure size is minimized.
+- The program uses bitwise operations to extract each part from the 32-bit input.
+- The size of the structure is displayed to show the memory footprint of the packet structure.
+
 This repository provides a simple yet effective way to decode a 32-bit packet, making it a useful tool for embedded programming tasks.
