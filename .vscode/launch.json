@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Behnam/Desktop/Robotic Profession/Learning/workspace_VsCode/decode_32bitPacket",
-      "program": "c:/Users/Behnam/Desktop/Robotic Profession/Learning/workspace_VsCode/decode_32bitPacket/build/Debug/outDebug",
+      "cwd": "c:/Users/Behnam/Desktop/Robotic Profession/Learning/workspace_VsCode/decode_32bitPacket_using_Union&Struct",
+      "program": "c:/Users/Behnam/Desktop/Robotic Profession/Learning/workspace_VsCode/decode_32bitPacket_using_Union&Struct/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

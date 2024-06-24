@@ -54,8 +54,8 @@ int main()
     frame.part3 = (uint16_t)(packetData >>3 & 0xFFF);
     frame.part4 = (uint8_t)(packetData >>15 & 0x7);
     frame.part5 = (uint8_t)(packetData >>18 & 0x7);
-    frame.part7 = (uint8_t)(packetData >>21 & 0xFF);
-    frame.part6 = (uint8_t)(packetData >>29 & 0x3);
+    frame.part6 = (uint8_t)(packetData >>21 & 0xFF);
+    frame.part7 = (uint8_t)(packetData >>29 & 0x3);
     frame.part8 = (uint8_t)(packetData >>31 & 0x1);
     
     // Display the extracted fields
@@ -69,7 +69,7 @@ int main()
     printf("part8 is : %x \n", frame.part8);
    
    // Display the size of the struct
-    printf("Size of struct is: %d bytes \n", (int)sizeof(fram));
+    printf("Size of struct is: %d bytes \n", (int)sizeof(frame));
 
     return 0;
 }
