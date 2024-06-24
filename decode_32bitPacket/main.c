@@ -46,27 +46,27 @@ int main()
 
 
     // Create an instance of the packet struct
-    struct packet fram;
+    struct packet frame;
 
     // Extract fields from the 32-bit packet using bitwise operations
-    fram.part1 = (uint8_t)(packetData & 0x03);
-    fram.part2 = (uint8_t)(packetData >>2 & 0x1);
-    fram.part3 = (uint16_t)(packetData >>3 & 0xFFF);
-    fram.part4 = (uint8_t)(packetData >>15 & 0x7);
-    fram.part5 = (uint8_t)(packetData >>18 & 0x7);
-    fram.part7 = (uint8_t)(packetData >>21 & 0xFF);
-    fram.part6 = (uint8_t)(packetData >>29 & 0x3);
-    fram.part8 = (uint8_t)(packetData >>31 & 0x1);
+    frame.part1 = (uint8_t)(packetData & 0x03);
+    frame.part2 = (uint8_t)(packetData >>2 & 0x1);
+    frame.part3 = (uint16_t)(packetData >>3 & 0xFFF);
+    frame.part4 = (uint8_t)(packetData >>15 & 0x7);
+    frame.part5 = (uint8_t)(packetData >>18 & 0x7);
+    frame.part7 = (uint8_t)(packetData >>21 & 0xFF);
+    frame.part6 = (uint8_t)(packetData >>29 & 0x3);
+    frame.part8 = (uint8_t)(packetData >>31 & 0x1);
     
     // Display the extracted fields
-    printf("part1 is : %x \n", fram.part1);
-    printf("part2 is : %x \n", fram.part2);
-    printf("part3 is : %x \n", fram.part3);
-    printf("part4 is : %x \n", fram.part4);
-    printf("part5 is : %x \n", fram.part5);
-    printf("part7 is : %x \n", fram.part7);
-    printf("part6 is : %x \n", fram.part6);
-    printf("part8 is : %x \n", fram.part8);
+    printf("part1 is : %x \n", frame.part1);
+    printf("part2 is : %x \n", frame.part2);
+    printf("part3 is : %x \n", frame.part3);
+    printf("part4 is : %x \n", frame.part4);
+    printf("part5 is : %x \n", frame.part5);
+    printf("part7 is : %x \n", frame.part7);
+    printf("part6 is : %x \n", frame.part6);
+    printf("part8 is : %x \n", frame.part8);
    
    // Display the size of the struct
     printf("Size of struct is: %d bytes \n", (int)sizeof(fram));
